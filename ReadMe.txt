@@ -4,12 +4,12 @@ Create a 'hms' database the import the sql file
 
 Admin
 Username - admin
-Password - password
+Password - P@$$w0rd
 
 Student
 Username - student
-Password - password
+Password - P@$$w0rd
 
 Employee
 Username - employee
-Password - password
+Password - P@$$w0rd
