@@ -22,7 +22,8 @@ $loginGrp=$ses->Get("userGroupId");
 $display="";
 $displaytable="none";
 $GLOBALS['isData']="0";
-if($ses->isExpired())
+
+if($ses->isExpired() || $ses->Get("userGroupId") === null)
 {
     header( 'Location:'.$base_url.'login.php');
 

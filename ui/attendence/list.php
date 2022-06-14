@@ -17,7 +17,8 @@ require('./../../inc/handyCam.php');
 $ses = new \sessionManager\sessionManager();
 $ses->start();
 $name=$ses->Get("name");
-if($ses->isExpired())
+
+if($ses->isExpired() || $ses->Get("userGroupId") === null)
 {
     header( 'Location:'.$base_url.'login.php');
 

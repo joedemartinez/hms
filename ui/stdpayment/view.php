@@ -32,7 +32,8 @@ else
     $GLOBALS['Name'] = "";
 }
 $ses->remove("UserIddrp");
-if($ses->isExpired())
+
+if($ses->isExpired() || $ses->Get("userGroupId") === null)
 {
     header( 'Location:'.$base_url.'login.php');
 

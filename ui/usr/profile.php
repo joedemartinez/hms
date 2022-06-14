@@ -12,9 +12,10 @@ $ses->start();
 
 $loginId=$ses->Get("userIdLoged");
 $loginGrp=$ses->Get("userGroupId");
-if($ses->isExpired())
+
+if($ses->isExpired() || $ses->Get("userGroupId") === null)
 {
-    header( 'Location: '.$base_url.'login.php');
+    header( 'Location: '.$base_url.'index.php');
 
 
 }

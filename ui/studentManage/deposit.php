@@ -10,7 +10,8 @@ require('./../../inc/fpdf.php');
 $ses = new \sessionManager\sessionManager();
 $ses->start();
 $GLOBALS['isData1']="";
-if($ses->isExpired())
+
+if($ses->isExpired() || $ses->Get("userGroupId") === null)
 {
     header( 'Location:'.$base_url.'login.php');
 

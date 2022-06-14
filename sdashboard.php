@@ -6,7 +6,7 @@ require('inc/sessionManager.php');
 $ses = new \sessionManager\sessionManager();
 require('inc/dbPlayer.php');
 $ses->start();
-if($ses->isExpired())
+if($ses->isExpired() || $ses->Get("userGroupId") === null)
 {
     header( 'Location: index.php');
 
